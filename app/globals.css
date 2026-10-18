@@ -54,7 +54,8 @@
 
 /* Dark scope for sections and pages. Apply `theme-night` to any container
    and every shadcn component inside it adapts automatically. */
-.theme-night {
+.theme-night,
+html[data-menu-open] [data-site-header] {
   --background: #101417;
   --surface-muted: #151a1e;
   --card: #171c20;
