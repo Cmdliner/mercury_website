@@ -1,5 +1,7 @@
 "use client"
 
+import Link from "next/link"
+
 import { ProductMenuLink } from "@/components/layout/product-menu-link"
 import {
   NavigationMenu,
@@ -40,7 +42,7 @@ export function DesktopNav() {
         {NAV_LINKS.map((link) => (
           <NavigationMenuItem key={link.href}>
             <NavigationMenuLink
-              href={link.href}
+              render={<Link href={link.href} />}
               className={cn(navigationMenuTriggerStyle(), ITEM_CLASS)}
             >
               {link.label}
