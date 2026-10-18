@@ -8,7 +8,7 @@ export function ProductMenuLink({ row }: { row: FeatureRow }) {
 
   return (
     <NavigationMenuLink
-      render={<Link href={`#${row.id}`} />}
+      render={<Link href={`/#${row.id}`} />}
       closeOnClick
       className="items-start gap-3 p-3"
     >

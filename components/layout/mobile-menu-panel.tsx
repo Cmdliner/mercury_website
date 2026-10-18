@@ -15,7 +15,7 @@ type MobileMenuPanelProps = {
 
 const PRODUCT_LINKS = FEATURE_ROWS.map((row) => ({
   label: row.eyebrow,
-  href: `#${row.id}`,
+  href: `/#${row.id}`,
 }))
 
 /** Where the circular reveal starts: the centre of the menu toggle. */

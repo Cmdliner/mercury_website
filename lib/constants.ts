@@ -7,6 +7,9 @@ export const SITE = {
   copyrightYear: 2026,
 } as const
 
+/** Public contact address, set with NEXT_PUBLIC_CONTACT_EMAIL. Left empty until one exists. */
+export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? ""
+
 export const SIGN_IN_PATH = "/sign-in"
 
 /** Mercury is still being built, so the call to action is the waitlist. */
@@ -14,9 +17,15 @@ export const WAITLIST_CTA = "Join the waitlist"
 export const WAITLIST_CTA_SHORT = "Join waitlist"
 
 export const NAV_LINKS = [
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Screens", href: "#screens" },
-  { label: "FAQ", href: "#faq" },
+  { label: "How it works", href: "/#how-it-works" },
+  { label: "Screens", href: "/#screens" },
+  { label: "FAQ", href: "/#faq" },
+] as const
+
+export const COMPANY_LINKS = [
+  { label: "About", href: "/about" },
+  { label: "Privacy", href: "/privacy" },
+  { label: "Design system", href: "/design-system" },
 ] as const
 
 export const STORE_COUNT_VALUES = ["1-2", "3-5", "6-10", "10+"] as const

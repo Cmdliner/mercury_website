@@ -4,12 +4,18 @@ import { Logo } from "@/components/brand/logo"
 import { FooterColumn } from "@/components/layout/footer-column"
 import { Container } from "@/components/shared/container"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
-import { NAV_LINKS, SIGN_IN_PATH, SITE, WAITLIST_CTA } from "@/lib/constants"
+import {
+  COMPANY_LINKS,
+  NAV_LINKS,
+  SIGN_IN_PATH,
+  SITE,
+  WAITLIST_CTA,
+} from "@/lib/constants"
 import { FEATURE_ROWS } from "@/lib/content"
 
 const PRODUCT_LINKS = FEATURE_ROWS.map((row) => ({
   label: row.eyebrow,
-  href: `#${row.id}`,
+  href: `/#${row.id}`,
 }))
 
 const ACCOUNT_LINKS = [{ label: "Sign in", href: SIGN_IN_PATH }]
@@ -17,7 +23,7 @@ const ACCOUNT_LINKS = [{ label: "Sign in", href: SIGN_IN_PATH }]
 export function SiteFooter() {
   return (
     <footer className="overflow-hidden border-t border-border">
-      <Container className="grid gap-14 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
+      <Container className="grid gap-14 py-16 lg:grid-cols-[1.4fr_2.6fr]">
         <div className="max-w-xs">
           <Logo />
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -26,9 +32,12 @@ export function SiteFooter() {
           </p>
           <WaitlistDialog className="mt-7">{WAITLIST_CTA}</WaitlistDialog>
         </div>
-        <FooterColumn title="Product" links={PRODUCT_LINKS} />
-        <FooterColumn title="Explore" links={NAV_LINKS} />
-        <FooterColumn title="Account" links={ACCOUNT_LINKS} />
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-4">
+          <FooterColumn title="Product" links={PRODUCT_LINKS} />
+          <FooterColumn title="Explore" links={NAV_LINKS} />
+          <FooterColumn title="Company" links={COMPANY_LINKS} />
+          <FooterColumn title="Account" links={ACCOUNT_LINKS} />
+        </div>
       </Container>
 
       <Container aria-hidden="true">
