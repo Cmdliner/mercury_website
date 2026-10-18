@@ -1,0 +1,182 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens: every colour in the UI comes from one of these.      */
+/* Brand source: Mercury desktop design (near-black ink, warm white,   */
+/* quiet borders, muted green).                                        */
+/* ------------------------------------------------------------------ */
+
+:root {
+  /* Surfaces */
+  --background: #f9f9f5;
+  --surface-muted: #f1f1ec;
+  --card: #ffffff;
+  --popover: #ffffff;
+
+  /* Text */
+  --foreground: #0f0f0f;
+  --muted-foreground: #5f5f59;
+  --subtle-foreground: #8d8d86;
+  --card-foreground: #0f0f0f;
+  --popover-foreground: #0f0f0f;
+
+  /* Actions */
+  --primary: #0f0f0f;
+  --primary-foreground: #f9f9f5;
+  --secondary: #efefe9;
+  --secondary-foreground: #0f0f0f;
+  --muted: #efefe9;
+  --accent: #efefe9;
+  --accent-foreground: #0f0f0f;
+  --destructive: #b3261e;
+
+  /* Lines */
+  --border: #e6e6e1;
+  --border-strong: #d2d2ca;
+  --input: #dcdcd5;
+  --ring: #8d8d86;
+
+  /* Brand accent */
+  --brand: #4f7059;
+  --brand-soft: #e6ede8;
+
+  --radius: 0.625rem;
+}
+
+/* Dark scope for sections and pages. Apply `theme-night` to any container
+   and every shadcn component inside it adapts automatically. */
+.theme-night {
+  --background: #101417;
+  --surface-muted: #151a1e;
+  --card: #171c20;
+  --popover: #171c20;
+  --foreground: #f9f9f5;
+  --muted-foreground: #9ca19c;
+  --subtle-foreground: #6f7571;
+  --card-foreground: #f9f9f5;
+  --popover-foreground: #f9f9f5;
+  --primary: #f9f9f5;
+  --primary-foreground: #0f0f0f;
+  --secondary: #1d2328;
+  --secondary-foreground: #f9f9f5;
+  --muted: #1d2328;
+  --accent: #1d2328;
+  --accent-foreground: #f9f9f5;
+  --border: #252c31;
+  --border-strong: #353d43;
+  --input: #2a3238;
+  --ring: #5b646b;
+  --brand: #86ad92;
+  --brand-soft: #1b2a21;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+
+  --color-background: var(--background);
+  --color-surface-muted: var(--surface-muted);
+  --color-card: var(--card);
+  --color-popover: var(--popover);
+  --color-foreground: var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Type scale and rhythm. Use these instead of ad hoc font sizes.      */
+/* ------------------------------------------------------------------ */
+
+@utility text-display {
+  font-size: clamp(2.75rem, 1.5rem + 5.2vw, 5.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+@utility text-title {
+  font-size: clamp(2.125rem, 1.5rem + 2.6vw, 3.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+@utility text-subtitle {
+  font-size: clamp(1.75rem, 1.35rem + 1.7vw, 2.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+@utility text-heading {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+@utility text-lead {
+  font-size: clamp(1.0625rem, 1rem + 0.3vw, 1.25rem);
+  line-height: 1.65;
+  color: var(--muted-foreground);
+  text-wrap: pretty;
+}
+
+@utility text-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--subtle-foreground);
+}
+
+@utility py-section {
+  padding-block: clamp(4.5rem, 2.5rem + 7vw, 8.5rem);
+}
+
+@utility pb-section {
+  padding-bottom: clamp(4.5rem, 2.5rem + 7vw, 8.5rem);
+}
