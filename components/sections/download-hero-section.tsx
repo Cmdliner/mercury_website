@@ -15,7 +15,7 @@ const FACTS = [
 /** The main download card: what you get, the button, and a checksum to verify it. */
 export function DownloadHeroSection() {
   return (
-    <Section spacing="bottom" className="relative z-10 -mt-10 sm:-mt-14">
+    <Section>
       <Reveal>
         <div className="rounded-[2rem] border border-border-strong bg-card p-6 sm:p-10">
           <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-14">
