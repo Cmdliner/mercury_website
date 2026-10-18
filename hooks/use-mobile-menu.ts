@@ -19,8 +19,6 @@ export function useMobileMenu() {
     const root = document.documentElement
     const previousOverflow = root.style.overflow
     root.style.overflow = "hidden"
-    // Lets the header go dark while the black menu is open.
-    root.setAttribute("data-menu-open", "")
 
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false)
@@ -35,7 +33,6 @@ export function useMobileMenu() {
 
     return () => {
       root.style.overflow = previousOverflow
-      root.removeAttribute("data-menu-open")
       document.removeEventListener("keydown", onKeyDown)
       desktop.removeEventListener("change", onViewportChange)
     }

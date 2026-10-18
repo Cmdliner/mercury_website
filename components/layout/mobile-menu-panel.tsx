@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 import { MobileMenuLink } from "@/components/layout/mobile-menu-link"
+import { Capsule } from "@/components/shared/capsule"
 import { buttonVariants } from "@/components/ui/button"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
 import { NAV_LINKS, SIGN_IN_PATH, WAITLIST_CTA } from "@/lib/constants"
@@ -18,7 +19,7 @@ const PRODUCT_LINKS = FEATURE_ROWS.map((row) => ({
 }))
 
 /** Where the circular reveal starts: the centre of the menu toggle. */
-const REVEAL_ORIGIN = "calc(100% - 2.25rem) 2.25rem"
+const REVEAL_ORIGIN = "calc(100% - 4.25rem) 2rem"
 
 /** Full-screen menu, revealed as a circle growing from the toggle button. */
 export function MobileMenuPanel({ open, onNavigate }: MobileMenuPanelProps) {
@@ -32,8 +33,11 @@ export function MobileMenuPanel({ open, onNavigate }: MobileMenuPanelProps) {
       style={{
         clipPath: `circle(${open ? "150%" : "0%"} at ${REVEAL_ORIGIN})`,
       }}
-      className="theme-night fixed inset-0 z-40 overflow-y-auto bg-[#0b0b0b] text-foreground transition-[clip-path] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden"
+      className="fixed inset-0 z-40 overflow-y-auto bg-background/95 backdrop-blur-2xl transition-[clip-path] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden"
     >
+      <Capsule className="-right-24 top-1/3 h-40 w-[22rem] rotate-[14deg] bg-foreground/[0.05]" />
+      <Capsule className="-left-32 bottom-1/4 h-36 w-[22rem] -rotate-[10deg] bg-foreground/[0.04]" />
+
       <div className="relative flex min-h-dvh flex-col px-5 pt-24 pb-8">
         <p className="text-eyebrow">Product</p>
         <nav aria-label="Product" className="mt-2">
@@ -80,7 +84,7 @@ export function MobileMenuPanel({ open, onNavigate }: MobileMenuPanelProps) {
             className={buttonVariants({
               variant: "outline",
               size: "lg",
-              className: "w-full bg-transparent",
+              className: "w-full bg-card",
             })}
           >
             Sign in

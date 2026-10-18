@@ -12,10 +12,7 @@ import { cn } from "@/lib/utils"
 /** Frosted glass bar: translucent surface and blur, deliberately no border. */
 export function SiteHeader() {
   return (
-    <header
-      data-site-header
-      className="sticky top-0 z-50 w-full bg-background/80 text-foreground backdrop-blur-xl transition-colors duration-300"
-    >
+    <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-xl">
       <Container className="flex h-16 items-center justify-between">
         <div className="flex items-center gap-8">
           <Logo />
