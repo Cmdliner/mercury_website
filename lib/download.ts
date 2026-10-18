@@ -1,29 +1,34 @@
-/** The current Windows release of Mercury Desktop. Update these when a new build is published. */
+/**
+ * The current Windows release of Mercury Desktop. The installer is hosted on GitHub Releases, and
+ * the "latest" link always points at the newest release, so only the version, size and checksum
+ * need updating when a new build is published.
+ */
 export const RELEASE = {
   version: "0.1.0",
   platform: "Windows 10 and 11, 64-bit",
-  file: "/downloads/Mercury-0.1.0-win-x64.zip",
-  size: "57 MB",
+  file: "https://github.com/Cmdliner/Mercury.Desktop/releases/latest/download/Mercury-Setup.exe",
+  size: "58 MB",
   released: "October 2026",
-  sha256: "d91d342f19cb2adf8e39e9e72dc07ed97f9920c50e9b635aa29f9def45e56d4b",
+  sha256: "434c84842b98bc0f4b981538d802316bfb480598d020da0582d457d42d1281c2",
 } as const
 
 export const REQUIREMENTS: string[] = [
   "Windows 10 (version 1809) or Windows 11, 64-bit",
   "Nothing else to install: the .NET runtime is included",
-  "About 200 MB of free disk space",
+  "About 200 MB of free disk space (no administrator rights needed)",
   "An internet connection to sync your stores",
 ]
 
 export const INSTALL_STEPS: { title: string; description: string }[] = [
   {
-    title: "Download and unzip",
-    description: "Save the file, then right-click it and choose Extract All.",
+    title: "Download the installer",
+    description:
+      "Save Mercury-Setup and open it. If Windows shows a SmartScreen notice, choose More info, then Run anyway.",
   },
   {
-    title: "Open Mercury",
+    title: "Install and open Mercury",
     description:
-      "Run Mercury.Desktop.exe. If Windows shows a SmartScreen notice, choose More info, then Run anyway.",
+      "Follow the setup wizard. It adds a Start menu shortcut, and an optional one on your desktop.",
   },
   {
     title: "Set up your business",

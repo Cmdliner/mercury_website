@@ -42,3 +42,4 @@ next-env.d.ts
 
 # release binaries are published separately, not committed
 /public/downloads/*.zip
+/public/downloads/*.exe
