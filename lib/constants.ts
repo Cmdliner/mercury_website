@@ -20,6 +20,7 @@ export const NAV_LINKS = [
   { label: "How it works", href: "/#how-it-works" },
   { label: "Screens", href: "/#screens" },
   { label: "FAQ", href: "/#faq" },
+  { label: "Download", href: "/download" },
 ] as const
 
 export const COMPANY_LINKS = [
