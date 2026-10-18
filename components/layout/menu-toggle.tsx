@@ -6,7 +6,7 @@ type MenuToggleProps = {
 }
 
 /**
- * A pill that says "Menu" and turns into "Close". The label slides up to swap, and a plus
+ * A rounded pill that says "Menu" and turns into "Close". The label slides up to swap, and a plus
  * sign turns a quarter turn into a cross.
  */
 export function MenuToggle({ open, onToggle }: MenuToggleProps) {

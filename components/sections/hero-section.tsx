@@ -1,7 +1,6 @@
 import Link from "next/link"
 import { ArrowRightIcon } from "lucide-react"
 
-import { ConstructionBadge } from "@/components/shared/construction-badge"
 import { HeroBackdrop } from "@/components/illustrations/hero-backdrop"
 import { Container } from "@/components/shared/container"
 import { buttonVariants } from "@/components/ui/button"
@@ -18,10 +17,7 @@ export function HeroSection() {
       <HeroBackdrop className="absolute inset-0 -z-10 text-foreground" />
 
       <Container className="flex flex-col items-center pt-36 pb-24 text-center sm:pt-44 sm:pb-32">
-        <div className="motion-safe:animate-rise">
-          <ConstructionBadge />
-        </div>
-        <h1 className="text-display mt-8 max-w-3xl [animation-delay:120ms] motion-safe:animate-rise">
+        <h1 className="text-display max-w-3xl [animation-delay:120ms] motion-safe:animate-rise">
           One set of books for every store you run.
         </h1>
         <p className="text-lead mt-6 max-w-2xl [animation-delay:240ms] motion-safe:animate-rise sm:text-xl">
