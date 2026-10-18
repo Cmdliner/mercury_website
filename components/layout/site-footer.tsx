@@ -22,7 +22,7 @@ const ACCOUNT_LINKS = [{ label: "Sign in", href: SIGN_IN_PATH }]
 
 export function SiteFooter() {
   return (
-    <footer className="overflow-hidden border-t border-border">
+    <footer className="theme-night overflow-hidden border-t border-border bg-background text-foreground">
       <Container className="grid gap-14 py-16 lg:grid-cols-[1.4fr_2.6fr]">
         <div className="max-w-xs">
           <Logo />
