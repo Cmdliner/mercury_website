@@ -10,12 +10,12 @@ type LegalDocumentProps = {
 /** A long-form document: contents on the left, numbered sections on the right. */
 export function LegalDocument({ updated, sections }: LegalDocumentProps) {
   return (
-    <Section>
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[16rem_1fr] lg:gap-20">
+    <Section className="py-10 sm:py-12">
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[16rem_1fr] lg:gap-20">
         <LegalToc sections={sections} />
         <div className="max-w-2xl">
           <p className="text-sm text-muted-foreground">Last updated {updated}</p>
-          <div className="mt-10 grid gap-12">
+          <div className="mt-8 grid gap-10">
             {sections.map((section, index) => (
               <section key={section.id} id={section.id} className="scroll-mt-24">
                 <h2 className="text-heading">

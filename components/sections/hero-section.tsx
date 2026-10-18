@@ -3,7 +3,6 @@ import { ArrowRightIcon } from "lucide-react"
 
 import { ConstructionBadge } from "@/components/shared/construction-badge"
 import { HeroBackdrop } from "@/components/illustrations/hero-backdrop"
-import { ProductTour } from "@/components/sections/product-tour"
 import { Container } from "@/components/shared/container"
 import { buttonVariants } from "@/components/ui/button"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
@@ -18,7 +17,7 @@ export function HeroSection() {
     <section className="relative isolate -mt-16 overflow-hidden bg-background text-foreground">
       <HeroBackdrop className="absolute inset-0 -z-10 text-foreground" />
 
-      <Container className="flex flex-col items-center pt-36 pb-20 text-center sm:pt-44 sm:pb-28">
+      <Container className="flex flex-col items-center pt-36 pb-24 text-center sm:pt-44 sm:pb-32">
         <div className="motion-safe:animate-rise">
           <ConstructionBadge />
         </div>
@@ -47,7 +46,9 @@ export function HeroSection() {
           </Link>
         </div>
 
-        <ProductTour className="mt-16 max-w-5xl sm:mt-20" />
+        {/* The product tour is switched off for now. To bring it back, import ProductTour from
+            "@/components/sections/product-tour" and render:
+            <ProductTour className="mt-16 max-w-5xl sm:mt-20" /> */}
       </Container>
     </section>
   )

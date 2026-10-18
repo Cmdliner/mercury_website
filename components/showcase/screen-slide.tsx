@@ -1,6 +1,5 @@
 import Image from "next/image"
 
-import { AppWindow } from "@/components/shared/app-window"
 import type { Screen } from "@/lib/content"
 
 type ScreenSlideProps = {
@@ -10,16 +9,16 @@ type ScreenSlideProps = {
 
 export function ScreenSlide({ screen, priority = false }: ScreenSlideProps) {
   return (
-    <AppWindow title={screen.title}>
+    <div className="overflow-hidden rounded-xl border border-border-strong bg-black">
       <Image
         src={screen.src}
         alt={screen.alt}
-        width={1440}
-        height={900}
+        width={1280}
+        height={720}
         priority={priority}
         sizes="(min-width: 1152px) 1060px, 100vw"
         className="h-auto w-full"
       />
-    </AppWindow>
+    </div>
   )
 }

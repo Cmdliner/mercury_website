@@ -13,9 +13,10 @@ export default function Privacy() {
   return (
     <>
       <PageHeader
-        eyebrow="Privacy"
+        compact
+        eyebrow="Privacy policy"
         title="How we handle your information."
-        description="Plain language, no surprises. This covers the Mercury website and the waitlist."
+        description="Plain language. This covers the Mercury website and the waitlist."
       />
       <LegalDocument updated={PRIVACY_UPDATED} sections={PRIVACY_SECTIONS} />
     </>

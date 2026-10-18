@@ -167,21 +167,21 @@ export const SCREENS: Screen[] = [
     title: "Overview",
     description:
       "Total balance, available funds and today's sales across every store, with recent transactions alongside.",
-    src: "/screens/dashboard.png",
+    src: "/screens/desktop/dashboard-overview.png",
     alt: "Mercury overview screen showing total balance, sales today and recent transactions",
   },
   {
     id: "stores",
     title: "Stores",
     description: "All your branches in one place, each with its own books.",
-    src: "/screens/stores.png",
+    src: "/screens/desktop/stores.png",
     alt: "Mercury stores screen listing each branch",
   },
   {
     id: "transactions",
     title: "Transactions",
     description: "A full activity log you can filter by store and account.",
-    src: "/screens/transactions.png",
+    src: "/screens/desktop/transactions.png",
     alt: "Mercury transactions screen with a filterable list of activity",
   },
   {
@@ -189,16 +189,16 @@ export const SCREENS: Screen[] = [
     title: "Accounts",
     description:
       "Operating, settlement and spending accounts, with balances derived from the ledger.",
-    src: "/screens/accounts.png",
+    src: "/screens/desktop/accounts.png",
     alt: "Mercury accounts screen listing balances for each account",
   },
   {
     id: "payment-page",
-    title: "Payment page",
+    title: "Payments",
     description:
-      "What your customers see when they pay a store by bank transfer.",
-    src: "/screens/receive-payment.png",
-    alt: "Mercury customer payment page with amount entry and bank transfer details",
+      "The account each store takes payments into, ready to read out to a customer or copy.",
+    src: "/screens/desktop/payments.png",
+    alt: "Mercury payments screen showing the account number a customer pays into",
   },
 ]
 
