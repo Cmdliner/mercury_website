@@ -3,12 +3,14 @@ import type { Step } from "@/lib/content"
 type StepItemProps = {
   step: Step
   number: number
+  /** Colour for the step number. */
+  accent: string
 }
 
-export function StepItem({ step, number }: StepItemProps) {
+export function StepItem({ step, number, accent }: StepItemProps) {
   return (
     <li className="flex gap-6 border-t border-border-strong py-8 first:border-t-0 first:pt-0 sm:gap-10">
-      <span className="font-mono text-sm text-brand">
+      <span className="font-mono text-sm font-medium" style={{ color: accent }}>
         {String(number).padStart(2, "0")}
       </span>
       <div>

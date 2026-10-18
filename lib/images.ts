@@ -1,11 +1,11 @@
 import type { StaticImageData } from "next/image"
 
-import arch from "@/public/photos/arch.jpg"
-import facade from "@/public/photos/facade.jpg"
+import accounts from "@/public/photos/accounts.jpg"
 import glass from "@/public/photos/glass.jpg"
 import hero from "@/public/photos/hero.jpg"
-import shelves from "@/public/photos/shelves.jpg"
-import spiral from "@/public/photos/spiral.jpg"
+import owner from "@/public/photos/owner.jpg"
+import reconcile from "@/public/photos/reconcile.jpg"
+import stores from "@/public/photos/stores.jpg"
 
 export type Photo = {
   src: StaticImageData
@@ -16,23 +16,23 @@ export type Photo = {
 export const PHOTOS = {
   hero: {
     src: hero,
-    alt: "Golden sunset over city rooftops and radio masts in Lagos",
+    alt: "Aerial view of a busy Lagos market street with colourful umbrellas and yellow buses",
   },
-  shelves: {
-    src: shelves,
-    alt: "White pharmacy bottles lined up on a wooden shelf",
+  owner: {
+    src: owner,
+    alt: "A smiling shop owner holding up a set of keys",
   },
-  facade: {
-    src: facade,
-    alt: "Pale concrete building facade with a repeating grid pattern",
+  stores: {
+    src: stores,
+    alt: "A shopkeeper standing among colourful shelves in a small shop",
   },
-  arch: {
-    src: arch,
-    alt: "White archway corridor receding into the distance",
+  accounts: {
+    src: accounts,
+    alt: "A calculator resting on ledger paper",
   },
-  spiral: {
-    src: spiral,
-    alt: "Monochrome spiral staircase with dramatic shadows",
+  reconcile: {
+    src: reconcile,
+    alt: "A shop owner counting banknotes at his counter",
   },
   glass: {
     src: glass,
