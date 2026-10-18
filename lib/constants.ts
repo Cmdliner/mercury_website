@@ -9,6 +9,10 @@ export const SITE = {
 
 export const SIGN_IN_PATH = "/sign-in"
 
+/** Mercury is still being built, so the call to action is the waitlist. */
+export const WAITLIST_CTA = "Join the waitlist"
+export const WAITLIST_CTA_SHORT = "Join waitlist"
+
 export const NAV_LINKS = [
   { label: "How it works", href: "#how-it-works" },
   { label: "Screens", href: "#screens" },

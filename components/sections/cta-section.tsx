@@ -2,6 +2,7 @@ import { LogoMark } from "@/components/brand/logo-mark"
 import { Photo } from "@/components/shared/photo"
 import { Section } from "@/components/shared/section"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
+import { WAITLIST_CTA } from "@/lib/constants"
 import { PHOTOS } from "@/lib/images"
 
 export function CtaSection() {
@@ -24,7 +25,7 @@ export function CtaSection() {
             waitlist to be one of them.
           </p>
           <WaitlistDialog size="lg" className="mt-10">
-            Request early access
+            {WAITLIST_CTA}
           </WaitlistDialog>
         </div>
       </div>

@@ -7,11 +7,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
+import { WAITLIST_CTA } from "@/lib/constants"
 import { FAQS } from "@/lib/content"
 
 export function FaqSection() {
   return (
-    <Section id="faq" tone="sun">
+    <Section id="faq" className="border-t border-border">
       <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
         <div className="lg:sticky lg:top-28">
           <SectionHeading
@@ -20,7 +21,7 @@ export function FaqSection() {
             description="Anything else you would like to know before Mercury opens up?"
           />
           <WaitlistDialog variant="outline" size="lg" className="mt-8">
-            Request early access
+            {WAITLIST_CTA}
           </WaitlistDialog>
         </div>
         <Accordion defaultValue={[FAQS[0].question]}>

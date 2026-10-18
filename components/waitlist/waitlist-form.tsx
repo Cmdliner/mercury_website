@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/select"
 import { WaitlistSuccess } from "@/components/waitlist/waitlist-success"
 import { useWaitlistForm } from "@/hooks/use-waitlist-form"
-import { STORE_COUNT_OPTIONS } from "@/lib/constants"
+import { STORE_COUNT_OPTIONS, WAITLIST_CTA } from "@/lib/constants"
 
 export function WaitlistForm() {
   const { form, onSubmit, isSubmitted } = useWaitlistForm()
@@ -24,25 +24,27 @@ export function WaitlistForm() {
   if (isSubmitted) return <WaitlistSuccess />
 
   return (
-    <form onSubmit={onSubmit} noValidate className="grid gap-4">
-      <FormField label="Full name" htmlFor="fullName" error={errors.fullName?.message}>
-        <Input
-          id="fullName"
-          autoComplete="name"
-          aria-invalid={!!errors.fullName}
-          {...register("fullName")}
-        />
-      </FormField>
+    <form onSubmit={onSubmit} noValidate className="grid gap-5">
+      <div className="grid gap-5 sm:grid-cols-2">
+        <FormField label="Full name" htmlFor="fullName" error={errors.fullName?.message}>
+          <Input
+            id="fullName"
+            autoComplete="name"
+            aria-invalid={!!errors.fullName}
+            {...register("fullName")}
+          />
+        </FormField>
 
-      <FormField label="Work email" htmlFor="email" error={errors.email?.message}>
-        <Input
-          id="email"
-          type="email"
-          autoComplete="email"
-          aria-invalid={!!errors.email}
-          {...register("email")}
-        />
-      </FormField>
+        <FormField label="Work email" htmlFor="email" error={errors.email?.message}>
+          <Input
+            id="email"
+            type="email"
+            autoComplete="email"
+            aria-invalid={!!errors.email}
+            {...register("email")}
+          />
+        </FormField>
+      </div>
 
       <FormField
         label="Business name"
@@ -90,8 +92,8 @@ export function WaitlistForm() {
         />
       </FormField>
 
-      <Button type="submit" size="lg" disabled={isSubmitting} className="mt-2">
-        {isSubmitting ? "Sending..." : "Join the waitlist"}
+      <Button type="submit" size="lg" disabled={isSubmitting} className="mt-2 w-full">
+        {isSubmitting ? "Sending..." : WAITLIST_CTA}
       </Button>
     </form>
   )

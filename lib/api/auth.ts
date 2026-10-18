@@ -11,7 +11,7 @@ export async function signIn(input: SignInInput): Promise<void> {
   void input
   await new Promise((resolve) => setTimeout(resolve, SIMULATED_LATENCY_MS))
   throw new ApiError(
-    "Sign in is not open yet. Request early access and we will let you know.",
+    "Sign in is not open yet. Join the waitlist and we will let you know.",
     503
   )
 }

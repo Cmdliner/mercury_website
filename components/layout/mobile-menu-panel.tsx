@@ -4,7 +4,7 @@ import { MobileMenuLink } from "@/components/layout/mobile-menu-link"
 import { Capsule } from "@/components/shared/capsule"
 import { buttonVariants } from "@/components/ui/button"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
-import { NAV_LINKS, SIGN_IN_PATH } from "@/lib/constants"
+import { NAV_LINKS, SIGN_IN_PATH, WAITLIST_CTA } from "@/lib/constants"
 import { FEATURE_ROWS } from "@/lib/content"
 import { cn } from "@/lib/utils"
 
@@ -35,8 +35,8 @@ export function MobileMenuPanel({ open, onNavigate }: MobileMenuPanelProps) {
       }}
       className="fixed inset-0 z-40 overflow-y-auto bg-background/95 backdrop-blur-2xl transition-[clip-path] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden"
     >
-      <Capsule className="-right-24 top-1/3 h-40 w-[22rem] rotate-[14deg] bg-sun/25" />
-      <Capsule className="-left-32 bottom-1/4 h-36 w-[22rem] -rotate-[10deg] bg-brand/10" />
+      <Capsule className="-right-24 top-1/3 h-40 w-[22rem] rotate-[14deg] bg-foreground/[0.05]" />
+      <Capsule className="-left-32 bottom-1/4 h-36 w-[22rem] -rotate-[10deg] bg-foreground/[0.04]" />
 
       <div className="relative flex min-h-dvh flex-col px-5 pt-24 pb-8">
         <p className="text-eyebrow">Product</p>
@@ -76,7 +76,7 @@ export function MobileMenuPanel({ open, onNavigate }: MobileMenuPanelProps) {
           )}
         >
           <WaitlistDialog size="lg" className="w-full" onClick={onNavigate}>
-            Request early access
+            {WAITLIST_CTA}
           </WaitlistDialog>
           <Link
             href={SIGN_IN_PATH}

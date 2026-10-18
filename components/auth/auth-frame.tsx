@@ -1,6 +1,7 @@
 import { Logo } from "@/components/brand/logo"
 import { Capsule } from "@/components/shared/capsule"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
+import { WAITLIST_CTA_SHORT } from "@/lib/constants"
 
 /**
  * Full-screen dark shell for sign-in: a single centred column over tilted
@@ -16,8 +17,8 @@ export function AuthFrame({ children }: { children: React.ReactNode }) {
       <div className="relative mx-auto flex w-full max-w-md flex-1 flex-col px-5 pt-10 pb-8 sm:pt-14">
         <div className="flex items-center justify-between">
           <Logo />
-          <WaitlistDialog variant="outline" size="sm" className="rounded-full">
-            Create account
+          <WaitlistDialog variant="outline" size="sm">
+            {WAITLIST_CTA_SHORT}
           </WaitlistDialog>
         </div>
         <div className="pt-16 pb-12 sm:pt-20">{children}</div>

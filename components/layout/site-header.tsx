@@ -6,7 +6,7 @@ import { MobileNav } from "@/components/layout/mobile-nav"
 import { Container } from "@/components/shared/container"
 import { buttonVariants } from "@/components/ui/button"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
-import { SIGN_IN_PATH } from "@/lib/constants"
+import { SIGN_IN_PATH, WAITLIST_CTA_SHORT } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 
 /** Frosted glass bar: translucent surface and blur, deliberately no border. */
@@ -29,7 +29,7 @@ export function SiteHeader() {
             Sign in
           </Link>
           <WaitlistDialog className="hidden md:inline-flex">
-            Request access
+            {WAITLIST_CTA_SHORT}
           </WaitlistDialog>
           <MobileNav />
         </div>
