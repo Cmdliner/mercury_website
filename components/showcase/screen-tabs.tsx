@@ -24,7 +24,7 @@ export function ScreenTabs({ screens, activeIndex, onSelect }: ScreenTabsProps) 
           aria-selected={index === activeIndex}
           onClick={() => onSelect(index)}
           className={cn(
-            "shrink-0 rounded-full px-4 py-1.5 text-sm font-medium transition-colors",
+            "shrink-0 px-4 py-2 text-sm font-medium transition-colors",
             index === activeIndex
               ? "bg-foreground text-background"
               : "text-muted-foreground hover:text-foreground"
