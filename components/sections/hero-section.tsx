@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowRightIcon } from "lucide-react"
 
 import { ConstructionBadge } from "@/components/shared/construction-badge"
+import { HeroBackdrop } from "@/components/illustrations/hero-backdrop"
 import { Container } from "@/components/shared/container"
 import { buttonVariants } from "@/components/ui/button"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
@@ -9,7 +10,8 @@ import { WAITLIST_CTA } from "@/lib/constants"
 
 /**
  * The one dark section of the page: the design system's near-black with white text, so the
- * opening has contrast against the light sections that follow. No imagery. The section slides
+ * opening has contrast against the light sections that follow. The backdrop is line art built
+ * from the Mercury bead, not a photograph. The section slides
  * up under the translucent header.
  */
 export function HeroSection() {
@@ -19,6 +21,7 @@ export function HeroSection() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 -z-10 h-full bg-[radial-gradient(60%_50%_at_50%_0%,rgb(255_255_255/0.07),transparent)]"
       />
+      <HeroBackdrop className="absolute inset-0 -z-10 text-foreground" />
 
       <Container className="flex min-h-[40rem] flex-col items-center justify-center pt-36 pb-28 text-center sm:min-h-[44rem]">
         <div className="motion-safe:animate-rise">
