@@ -4,12 +4,12 @@
  * need updating when a new build is published.
  */
 export const RELEASE = {
-  version: "0.1.0",
+  version: "0.2.0",
   platform: "Windows 10 and 11, 64-bit",
   file: "https://github.com/Cmdliner/Mercury.Desktop/releases/latest/download/Mercury-Setup.exe",
   size: "58 MB",
   released: "October 2026",
-  sha256: "434c84842b98bc0f4b981538d802316bfb480598d020da0582d457d42d1281c2",
+  sha256: "b1680fa9abe28d6063bce5456c93f6e59d059a2e2f1ff9c9005e893c12c0f321",
 } as const
 
 export const REQUIREMENTS: string[] = [
