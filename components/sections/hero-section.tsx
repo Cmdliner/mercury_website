@@ -1,32 +1,48 @@
-import Image from "next/image"
 import Link from "next/link"
 import { ArrowRightIcon } from "lucide-react"
 
-import { AppWindow } from "@/components/shared/app-window"
-import { Capsule } from "@/components/shared/capsule"
+import { ConstructionBadge } from "@/components/shared/construction-badge"
 import { Container } from "@/components/shared/container"
+import { Photo } from "@/components/shared/photo"
 import { buttonVariants } from "@/components/ui/button"
 import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
+import { WAITLIST_CTA } from "@/lib/constants"
+import { PHOTOS } from "@/lib/images"
 
+/**
+ * A single centred column over a full-colour photograph. A light frosted layer
+ * covers the whole section: the photo stays visible but softened, and a soft
+ * text shadow keeps the copy readable. The section slides up under the
+ * translucent header.
+ */
 export function HeroSection() {
   return (
-    <section className="pt-16 pb-section sm:pt-24">
-      <Container className="text-center">
-        <p className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-soft px-3.5 py-1.5 text-xs font-medium text-brand">
-          <span className="size-1.5 rounded-full bg-brand" aria-hidden="true" />
-          Now in development
-        </p>
-        <h1 className="text-display mx-auto mt-7 max-w-4xl">
-          Every store, one <span className="text-brand">clear set of books.</span>
+    <section className="theme-night relative isolate -mt-16 overflow-hidden bg-background text-foreground">
+      <Photo
+        photo={PHOTOS.hero}
+        sizes="100vw"
+        priority
+        grayscale={false}
+        className="-z-10"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-black/40 backdrop-blur-[3px]"
+      />
+
+      <Container className="flex min-h-[40rem] flex-col items-center justify-center pt-36 pb-28 text-center sm:min-h-[46rem]">
+        <ConstructionBadge />
+        <h1 className="text-display mt-8 max-w-3xl [text-shadow:0_2px_28px_rgba(0,0,0,0.5)]">
+          One set of books for every store you run.
         </h1>
-        <p className="text-lead mx-auto mt-6 max-w-2xl">
-          Mercury is finance software for businesses that run more than one
-          store. Give each store its own accounts, track what comes in and goes
-          out, and always know where the money is.
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground [text-shadow:0_1px_18px_rgba(0,0,0,0.55)] sm:text-xl">
+          Mercury gives each branch its own accounts and ledger, and brings them
+          together so you can see balances, spending and reconciliation at a
+          glance.
         </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
           <WaitlistDialog size="lg" className="w-full sm:w-auto">
-            Request early access
+            {WAITLIST_CTA}
             <ArrowRightIcon data-icon="inline-end" />
           </WaitlistDialog>
           <Link
@@ -34,33 +50,11 @@ export function HeroSection() {
             className={buttonVariants({
               variant: "outline",
               size: "lg",
-              className: "w-full bg-card sm:w-auto",
+              className: "w-full sm:w-auto",
             })}
           >
             See how it works
           </Link>
-        </div>
-      </Container>
-
-      <Container className="mt-16 sm:mt-24">
-        <div className="relative overflow-hidden rounded-[1.75rem] border border-brand/15 bg-brand-soft px-3 pt-3 sm:px-12 sm:pt-12">
-          <Capsule className="-top-6 -left-28 h-44 w-[26rem] -rotate-[14deg] bg-brand/10" />
-          <Capsule className="top-40 -right-24 h-40 w-[24rem] rotate-[11deg] bg-sun/40" />
-          <Capsule className="-bottom-16 left-[18%] h-32 w-[20rem] rotate-[6deg] bg-sky/15" />
-          <AppWindow
-            title="Overview"
-            className="relative mx-auto max-h-[26rem] max-w-5xl rounded-b-none border-b-0 sm:max-h-[38rem]"
-          >
-            <Image
-              src="/screens/dashboard.png"
-              alt="Mercury overview screen showing total balance, sales today and recent transactions"
-              width={1440}
-              height={900}
-              priority
-              sizes="(min-width: 1024px) 1024px, 100vw"
-              className="h-auto w-full"
-            />
-          </AppWindow>
         </div>
       </Container>
     </section>

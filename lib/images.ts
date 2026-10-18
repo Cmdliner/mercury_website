@@ -3,6 +3,7 @@ import type { StaticImageData } from "next/image"
 import arch from "@/public/photos/arch.jpg"
 import facade from "@/public/photos/facade.jpg"
 import glass from "@/public/photos/glass.jpg"
+import hero from "@/public/photos/hero.jpg"
 import shelves from "@/public/photos/shelves.jpg"
 import spiral from "@/public/photos/spiral.jpg"
 
@@ -13,6 +14,10 @@ export type Photo = {
 
 /** Photography from Unsplash (free to use), stored locally in public/photos. */
 export const PHOTOS = {
+  hero: {
+    src: hero,
+    alt: "Golden sunset over city rooftops and radio masts in Lagos",
+  },
   shelves: {
     src: shelves,
     alt: "White pharmacy bottles lined up on a wooden shelf",

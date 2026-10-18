@@ -7,16 +7,23 @@ type PhotoProps = {
   photo: PhotoData
   sizes: string
   priority?: boolean
+  /** Photos are monochrome by default; pass false for full colour. */
+  grayscale?: boolean
   className?: string
 }
 
 /**
  * Fills its nearest positioned ancestor, so give the parent a size
  * (for example an aspect ratio) and `relative overflow-hidden`.
- * Photos are shown in monochrome; tint them with a coloured parent plus
- * `mix-blend-multiply` for a duotone look.
+ * Photos are shown in monochrome unless `grayscale={false}`.
  */
-export function Photo({ photo, sizes, priority = false, className }: PhotoProps) {
+export function Photo({
+  photo,
+  sizes,
+  priority = false,
+  grayscale = true,
+  className,
+}: PhotoProps) {
   return (
     <Image
       src={photo.src}
@@ -25,7 +32,7 @@ export function Photo({ photo, sizes, priority = false, className }: PhotoProps)
       sizes={sizes}
       priority={priority}
       placeholder="blur"
-      className={cn("object-cover grayscale", className)}
+      className={cn("object-cover", grayscale && "grayscale", className)}
     />
   )
 }
