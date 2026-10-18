@@ -1,5 +1,7 @@
 # Mercury website design system
 
+The living version of this document is the **/design-system** page of the site (source: `app/design-system`, `components/design-system`, `lib/design-tokens.ts`). It shows every token, type style, control, motion token, photo, the logo and the icon set. Start there; this file is the short written summary.
+
 Everything visual comes from `app/globals.css`. Do not hard-code colours or font sizes in components.
 
 ## Colour tokens (Tailwind class names)
@@ -33,11 +35,17 @@ shadcn components and the rules above work unchanged on dark sections and the si
 Buttons, inputs, selects and tabs have square corners. Primary is solid black, outline is a black
 border that fills on hover.
 
+## Hues
+Colour comes from hues, not one global accent. `lib/hues.ts` defines six (amber, blue, red, green, violet, teal). Capability cards each use one; each feature row (stores amber, accounts blue, reconciliation teal) keeps its own across its label, check marks and panel. `hueVars(hue)` sets CSS variables so everything inside an element recolours: `--brand` and `--brand-soft` for labels and check marks, `--tone`, `--tint` and `--slab` for panels and line art.
+
+## Motion
+Add motion with the `motion-safe:` variant so reduced-motion users get none. Keyframes are tokens in `globals.css`: `animate-float`, `animate-drift`, `animate-grow`, `animate-pulse-ring`, `animate-rise`, `animate-slow-zoom`. Sections fade in on scroll with `Reveal` (`components/shared/reveal.tsx`, driven by `useInView`); stagger siblings with its `delay` prop.
+
 ## Illustrations
 Line illustrations live in `components/illustrations`. Draw flat shapes inside an `IsoPlane` (it projects them isometrically) using `Panel` and `Bar`; strokes follow the text colour, so they work on light and dark. `CapabilityCard` shows one per capability, chosen by id.
 
 ## Rules
 - Depth comes from tone and borders, not shadows. Shadows are for popups only.
-- Photography is monochrome (`Photo` applies grayscale) except the hero, which is full colour (`grayscale={false}`). Never tint photos.
+- Use real photography before the Screens section; app screens appear only in Screens. Photos are full colour (`grayscale={false}`); never tint them.
 - Photos live in `public/photos` and are imported statically in `lib/images.ts`; always render them with `next/image`. Use `next/link` for every link.
 - Alternate default, muted and night bands so every section is clearly defined.
