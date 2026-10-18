@@ -1,31 +1,36 @@
+import type { StaticImageData } from "next/image"
+
+import arch from "@/public/photos/arch.jpg"
+import facade from "@/public/photos/facade.jpg"
+import glass from "@/public/photos/glass.jpg"
+import shelves from "@/public/photos/shelves.jpg"
+import spiral from "@/public/photos/spiral.jpg"
+
 export type Photo = {
-  src: string
+  src: StaticImageData
   alt: string
 }
 
-const unsplash = (id: string): string =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&q=75&w=1600`
-
-/** Photography from Unsplash, always shown in monochrome. */
+/** Photography from Unsplash (free to use), stored locally in public/photos. */
 export const PHOTOS = {
   shelves: {
-    src: unsplash("photo-1611072965169-e1534f6f300c"),
+    src: shelves,
     alt: "White pharmacy bottles lined up on a wooden shelf",
   },
   facade: {
-    src: unsplash("photo-1532456745301-b2c645d8b80d"),
+    src: facade,
     alt: "Pale concrete building facade with a repeating grid pattern",
   },
   arch: {
-    src: unsplash("photo-1524230572899-a752b3835840"),
+    src: arch,
     alt: "White archway corridor receding into the distance",
   },
   spiral: {
-    src: unsplash("photo-1762243794406-29e25f82985b"),
+    src: spiral,
     alt: "Monochrome spiral staircase with dramatic shadows",
   },
   glass: {
-    src: unsplash("photo-1499428665502-503f6c608263"),
+    src: glass,
     alt: "Person in silhouette behind a row of vertical frosted glass panels",
   },
 } as const satisfies Record<string, Photo>

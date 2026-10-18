@@ -13,6 +13,8 @@ type PhotoProps = {
 /**
  * Fills its nearest positioned ancestor, so give the parent a size
  * (for example an aspect ratio) and `relative overflow-hidden`.
+ * Photos are shown in monochrome; tint them with a coloured parent plus
+ * `mix-blend-multiply` for a duotone look.
  */
 export function Photo({ photo, sizes, priority = false, className }: PhotoProps) {
   return (
@@ -22,6 +24,7 @@ export function Photo({ photo, sizes, priority = false, className }: PhotoProps)
       fill
       sizes={sizes}
       priority={priority}
+      placeholder="blur"
       className={cn("object-cover grayscale", className)}
     />
   )
