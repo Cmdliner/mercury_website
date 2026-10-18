@@ -128,6 +128,88 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* Motion: used with the motion-safe: variant so reduced-motion users get none. */
+@theme {
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-drift: drift 10s ease-in-out infinite;
+  --animate-grow: grow 3.6s ease-in-out infinite;
+  --animate-arrive: arrive 6s ease-out infinite;
+  --animate-pulse-ring: pulse-ring 2.2s ease-out infinite;
+  --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-slow-zoom: slow-zoom 32s ease-in-out infinite alternate;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(-10px, -8px);
+    }
+  }
+  @keyframes grow {
+    0%,
+    100% {
+      transform: scaleY(0.15);
+    }
+    45%,
+    80% {
+      transform: scaleY(1);
+    }
+  }
+  @keyframes arrive {
+    0%,
+    8% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    22%,
+    86% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes pulse-ring {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--success) 55%, transparent);
+    }
+    60% {
+      box-shadow: 0 0 0 9px transparent;
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes slow-zoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.07);
+    }
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
