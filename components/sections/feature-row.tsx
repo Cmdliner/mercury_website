@@ -15,7 +15,7 @@ export function FeatureRow({ row, flip = false, children }: FeatureRowProps) {
   return (
     <div
       id={row.id}
-      className="grid scroll-mt-24 items-center gap-10 lg:grid-cols-2 lg:gap-20"
+      className="grid scroll-mt-24 grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-20"
     >
       <div className={cn(flip && "lg:order-2")}>
         <SectionHeading

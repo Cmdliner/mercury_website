@@ -1,4 +1,6 @@
 import { formatNaira } from "@/lib/format"
+import { TONE_STYLES } from "@/lib/tones"
+import { cn } from "@/lib/utils"
 import { ACCOUNTS_PREVIEW } from "@/lib/preview-data"
 
 export function AccountsPreview() {
@@ -12,7 +14,12 @@ export function AccountsPreview() {
               key={account.name}
               className="flex items-center justify-between gap-3 py-3"
             >
-              <span className="text-sm font-medium">{account.name}</span>
+              <span className="flex items-center gap-2.5 text-sm font-medium">
+                <span
+                  className={cn("size-2 rounded-full", TONE_STYLES[account.tone].dot)}
+                />
+                {account.name}
+              </span>
               <span className="flex items-center gap-4">
                 <span className="hidden text-xs text-muted-foreground sm:inline">
                   {account.normalBalance}

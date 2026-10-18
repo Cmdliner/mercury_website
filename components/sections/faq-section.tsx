@@ -11,8 +11,8 @@ import { FAQS } from "@/lib/content"
 
 export function FaqSection() {
   return (
-    <Section id="faq" tone="muted">
-      <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+    <Section id="faq" tone="sun">
+      <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
         <div className="lg:sticky lg:top-28">
           <SectionHeading
             eyebrow="FAQ"

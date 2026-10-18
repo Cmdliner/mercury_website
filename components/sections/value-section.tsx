@@ -8,11 +8,16 @@ import { PHOTOS } from "@/lib/images"
 export function ValueSection() {
   return (
     <Section spacing="bottom">
-      <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-        <div className="relative aspect-[5/4] overflow-hidden rounded-3xl border border-border bg-surface-muted lg:aspect-[4/5]">
+      <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
+        <div className="relative isolate aspect-[5/4] overflow-hidden rounded-3xl bg-brand-deep lg:aspect-[4/5]">
           <Photo
             photo={PHOTOS.shelves}
             sizes="(min-width: 1024px) 520px, 100vw"
+            className="opacity-70 mix-blend-luminosity"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-brand/35 mix-blend-multiply"
           />
         </div>
         <div>

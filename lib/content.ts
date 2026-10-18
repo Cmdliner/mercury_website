@@ -1,3 +1,4 @@
+import type { Tone } from "@/lib/tones"
 import {
   ArrowLeftRight,
   CheckCheck,
@@ -29,6 +30,7 @@ export type Capability = {
   title: string
   description: string
   icon: LucideIcon
+  tone: Tone
 }
 
 export type Step = {
@@ -110,6 +112,7 @@ export const CAPABILITIES: Capability[] = [
     description:
       "Balances, sales and recent activity across every store on a single screen.",
     icon: LayoutDashboard,
+    tone: "mint",
   },
   {
     id: "transactions",
@@ -117,6 +120,7 @@ export const CAPABILITIES: Capability[] = [
     description:
       "A full activity log you can filter by store and account.",
     icon: ArrowLeftRight,
+    tone: "sky",
   },
   {
     id: "detail",
@@ -124,6 +128,7 @@ export const CAPABILITIES: Capability[] = [
     description:
       "Open any transaction or account in a side panel without losing your place.",
     icon: FileSearch,
+    tone: "sun",
   },
   {
     id: "staff",
@@ -131,6 +136,7 @@ export const CAPABILITIES: Capability[] = [
     description:
       "Add your team and place them in the stores they work in.",
     icon: Users,
+    tone: "sky",
   },
   {
     id: "payments",
@@ -138,6 +144,7 @@ export const CAPABILITIES: Capability[] = [
     description:
       "A simple page per store with clear bank transfer details, recorded against that store.",
     icon: Receipt,
+    tone: "mint",
   },
   {
     id: "onboarding",
@@ -145,6 +152,7 @@ export const CAPABILITIES: Capability[] = [
     description:
       "From owner account to first store, with each step laid out for you.",
     icon: ListChecks,
+    tone: "sun",
   },
 ]
 

@@ -9,17 +9,17 @@ import { PHOTOS } from "@/lib/images"
 
 const VISUALS: Record<VisualId, React.ReactNode> = {
   stores: (
-    <PreviewPanel photo={PHOTOS.facade}>
+    <PreviewPanel photo={PHOTOS.facade} tone="mint">
       <StoresPreview />
     </PreviewPanel>
   ),
   accounts: (
-    <PreviewPanel photo={PHOTOS.arch}>
+    <PreviewPanel photo={PHOTOS.arch} tone="sun">
       <AccountsPreview />
     </PreviewPanel>
   ),
   reconciliation: (
-    <PreviewPanel photo={PHOTOS.spiral}>
+    <PreviewPanel photo={PHOTOS.spiral} tone="sky">
       <ReconciliationPreview />
     </PreviewPanel>
   ),
@@ -28,7 +28,7 @@ const VISUALS: Record<VisualId, React.ReactNode> = {
 export function FeatureRowsSection() {
   return (
     <Section spacing="bottom">
-      <div className="grid gap-24 lg:gap-36">
+      <div className="grid grid-cols-1 gap-24 lg:gap-36">
         {FEATURE_ROWS.map((row, index) => (
           <FeatureRow key={row.id} row={row} flip={index % 2 === 1}>
             {VISUALS[row.visual]}

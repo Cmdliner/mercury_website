@@ -21,7 +21,7 @@ export function ScreenCarousel() {
   const active = SCREENS[activeIndex]
 
   return (
-    <div className="mt-14 rounded-3xl border border-border bg-surface-muted p-3 sm:p-8">
+    <div className="mt-14 rounded-3xl border border-sky/15 bg-sky-soft/70 p-3 sm:p-8">
       <Carousel setApi={setApi} opts={{ align: "start" }}>
         <div className="mb-5 flex items-center justify-between gap-4 sm:mb-7">
           <ScreenTabs

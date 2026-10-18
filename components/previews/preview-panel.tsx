@@ -1,19 +1,31 @@
 import { Photo } from "@/components/shared/photo"
 import type { Photo as PhotoData } from "@/lib/images"
+import { TONE_STYLES, type Tone } from "@/lib/tones"
+import { cn } from "@/lib/utils"
 
 type PreviewPanelProps = {
   photo: PhotoData
+  tone: Tone
   children: React.ReactNode
 }
 
-/** A photographic backdrop that a product preview floats on. Decorative. */
-export function PreviewPanel({ photo, children }: PreviewPanelProps) {
+/**
+ * A coloured photographic backdrop that a product preview floats on.
+ * The monochrome photo is multiplied over the tone for a duotone look.
+ * Decorative.
+ */
+export function PreviewPanel({ photo, tone, children }: PreviewPanelProps) {
   return (
-    <div className="relative isolate overflow-hidden rounded-3xl border border-border bg-surface-muted">
+    <div
+      className={cn(
+        "relative isolate overflow-hidden rounded-3xl border border-foreground/5",
+        TONE_STYLES[tone].surface
+      )}
+    >
       <Photo
         photo={photo}
         sizes="(min-width: 1024px) 560px, 100vw"
-        className="opacity-45"
+        className="opacity-80 mix-blend-multiply"
       />
       <div
         aria-hidden="true"

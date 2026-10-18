@@ -3,6 +3,7 @@ import { CheckIcon } from "lucide-react"
 import { StatusPill } from "@/components/shared/status-pill"
 import { formatNaira } from "@/lib/format"
 import { SALES_BARS, SALES_TODAY } from "@/lib/preview-data"
+import { cn } from "@/lib/utils"
 
 export function ReconciliationPreview() {
   return (
@@ -16,7 +17,10 @@ export function ReconciliationPreview() {
           {SALES_BARS.map((height, index) => (
             <span
               key={index}
-              className="flex-1 rounded-sm bg-border-strong"
+              className={cn(
+                "flex-1 rounded-sm",
+                height >= 80 ? "bg-brand" : "bg-brand/25"
+              )}
               style={{ height: `${height}%` }}
             />
           ))}

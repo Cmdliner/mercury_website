@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRightIcon } from "lucide-react"
 
 import { AppWindow } from "@/components/shared/app-window"
@@ -11,12 +12,12 @@ export function HeroSection() {
   return (
     <section className="pt-16 pb-section sm:pt-24">
       <Container className="text-center">
-        <p className="inline-flex items-center gap-2 rounded-full border border-border-strong px-3.5 py-1.5 text-xs font-medium text-muted-foreground">
+        <p className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand-soft px-3.5 py-1.5 text-xs font-medium text-brand">
           <span className="size-1.5 rounded-full bg-brand" aria-hidden="true" />
           Now in development
         </p>
         <h1 className="text-display mx-auto mt-7 max-w-4xl">
-          Every store, one clear set of books.
+          Every store, one <span className="text-brand">clear set of books.</span>
         </h1>
         <p className="text-lead mx-auto mt-6 max-w-2xl">
           Mercury is finance software for businesses that run more than one
@@ -28,23 +29,24 @@ export function HeroSection() {
             Request early access
             <ArrowRightIcon data-icon="inline-end" />
           </WaitlistDialog>
-          <a
+          <Link
             href="#how-it-works"
             className={buttonVariants({
               variant: "outline",
               size: "lg",
-              className: "w-full sm:w-auto",
+              className: "w-full bg-card sm:w-auto",
             })}
           >
             See how it works
-          </a>
+          </Link>
         </div>
       </Container>
 
       <Container className="mt-16 sm:mt-24">
-        <div className="relative overflow-hidden rounded-[1.75rem] border border-border bg-surface-muted px-3 pt-3 sm:px-12 sm:pt-12">
-          <Capsule className="-top-6 -left-28 h-44 w-[26rem] -rotate-[14deg] bg-foreground/[0.04]" />
-          <Capsule className="top-44 -right-24 h-40 w-[24rem] rotate-[11deg] bg-foreground/[0.04]" />
+        <div className="relative overflow-hidden rounded-[1.75rem] border border-brand/15 bg-brand-soft px-3 pt-3 sm:px-12 sm:pt-12">
+          <Capsule className="-top-6 -left-28 h-44 w-[26rem] -rotate-[14deg] bg-brand/10" />
+          <Capsule className="top-40 -right-24 h-40 w-[24rem] rotate-[11deg] bg-sun/40" />
+          <Capsule className="-bottom-16 left-[18%] h-32 w-[20rem] rotate-[6deg] bg-sky/15" />
           <AppWindow
             title="Overview"
             className="relative mx-auto max-h-[26rem] max-w-5xl rounded-b-none border-b-0 sm:max-h-[38rem]"

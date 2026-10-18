@@ -10,10 +10,14 @@ Everything visual comes from `app/globals.css`. Do not hard-code colours or font
 | `muted-foreground` | Secondary text |
 | `subtle-foreground` | Tertiary text, eyebrows, footnotes |
 | `border` / `border-strong` | Hairlines / dividers that must be seen |
-| `brand` / `brand-soft` | Muted green accent and its tint (status pills, check marks) |
+| `brand` / `brand-soft` / `brand-deep` | Emerald accent, its mint tint, and the forest dark |
+| `sun` / `sun-soft` / `sun-ink` | Amber accent, its tint, and a readable amber for text |
+| `sky` / `sky-soft` | Soft blue accent and its tint |
 | `destructive` | Errors |
 
-Dark surfaces: add `theme-night` to a container. Every token above is remapped inside it, so
+Accent tones (mint, sun, sky) are mapped to classes in `lib/tones.ts`; change colour decisions there, not in components.
+
+Dark surfaces: add `theme-night` (blue-black) or `theme-forest` (deep green) to a container. Every token above is remapped inside it, so
 shadcn components and the rules above work unchanged on dark sections and the sign-in page.
 
 ## Type scale (utilities)
@@ -22,11 +26,12 @@ shadcn components and the rules above work unchanged on dark sections and the si
 
 ## Layout primitives
 - `Container` : centred, `max-w-6xl`, responsive gutters.
-- `Section` : full-width band with the shared vertical rhythm. `tone` is `default | muted | night`;
+- `Section` : full-width band with the shared vertical rhythm. `tone` is `default | muted | mint | sun | night | forest`;
   `spacing="bottom"` removes the top padding for a section that follows closely.
 - `Capsule` : the pill motif (from the desktop sign-in design). Decoration only.
 
 ## Rules
 - Depth comes from tone and borders, not shadows. Shadows are for popups only.
-- Photography is always monochrome (`Photo` applies grayscale).
+- Photography is monochrome (`Photo` applies grayscale). Tint it by multiplying it over a coloured parent for a duotone look.
+- Photos live in `public/photos` and are imported statically in `lib/images.ts`; always render them with `next/image`. Use `next/link` for every link.
 - Alternate light, tinted and night bands so every section is clearly defined.

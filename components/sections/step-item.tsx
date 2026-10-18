@@ -8,7 +8,7 @@ type StepItemProps = {
 export function StepItem({ step, number }: StepItemProps) {
   return (
     <li className="flex gap-6 border-t border-border-strong py-8 first:border-t-0 first:pt-0 sm:gap-10">
-      <span className="font-mono text-sm text-subtle-foreground">
+      <span className="font-mono text-sm text-brand">
         {String(number).padStart(2, "0")}
       </span>
       <div>
