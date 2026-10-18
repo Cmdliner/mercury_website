@@ -1,15 +1,12 @@
 import { Container } from "@/components/shared/container"
 import { cn } from "@/lib/utils"
 
-type SectionTone = "default" | "muted" | "mint" | "sun" | "night" | "forest"
+type SectionTone = "default" | "muted" | "night"
 
 const TONES: Record<SectionTone, string> = {
   default: "",
   muted: "border-y border-border bg-surface-muted",
-  mint: "border-y border-brand/10 bg-brand-soft/60",
-  sun: "border-y border-sun/15 bg-sun-soft/45",
   night: "theme-night bg-background text-foreground",
-  forest: "theme-forest bg-background text-foreground",
 }
 
 type SectionProps = React.ComponentProps<"section"> & {

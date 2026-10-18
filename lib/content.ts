@@ -1,13 +1,6 @@
-import type { Tone } from "@/lib/tones"
 import {
-  ArrowLeftRight,
   CheckCheck,
-  FileSearch,
-  LayoutDashboard,
-  ListChecks,
-  Receipt,
   Store,
-  Users,
   Wallet,
   type LucideIcon,
 } from "lucide-react"
@@ -25,12 +18,18 @@ export type FeatureRow = {
   visual: VisualId
 }
 
+export type CapabilityId =
+  | "overview"
+  | "transactions"
+  | "detail"
+  | "staff"
+  | "payments"
+  | "onboarding"
+
 export type Capability = {
-  id: string
+  id: CapabilityId
   title: string
   description: string
-  icon: LucideIcon
-  tone: Tone
 }
 
 export type Step = {
@@ -111,48 +110,36 @@ export const CAPABILITIES: Capability[] = [
     title: "One overview",
     description:
       "Balances, sales and recent activity across every store on a single screen.",
-    icon: LayoutDashboard,
-    tone: "mint",
   },
   {
     id: "transactions",
     title: "Transaction log",
     description:
       "A full activity log you can filter by store and account.",
-    icon: ArrowLeftRight,
-    tone: "sky",
   },
   {
     id: "detail",
     title: "Detail on demand",
     description:
       "Open any transaction or account in a side panel without losing your place.",
-    icon: FileSearch,
-    tone: "sun",
   },
   {
     id: "staff",
     title: "Staff",
     description:
       "Add your team and place them in the stores they work in.",
-    icon: Users,
-    tone: "sky",
   },
   {
     id: "payments",
     title: "Customer payment page",
     description:
       "A simple page per store with clear bank transfer details, recorded against that store.",
-    icon: Receipt,
-    tone: "mint",
   },
   {
     id: "onboarding",
     title: "Guided setup",
     description:
       "From owner account to first store, with each step laid out for you.",
-    icon: ListChecks,
-    tone: "sun",
   },
 ]
 

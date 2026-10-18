@@ -18,7 +18,7 @@
   /* Text */
   --foreground: #0f0f0f;
   --muted-foreground: #5f5f59;
-  --subtle-foreground: #8d8d86;
+  --subtle-foreground: #6c6c66;
   --card-foreground: #0f0f0f;
   --popover-foreground: #0f0f0f;
 
@@ -34,19 +34,20 @@
 
   /* Lines */
   --border: #e6e6e1;
-  --border-strong: #d2d2ca;
+  --border-strong: #c5c5bc;
   --input: #dcdcd5;
   --ring: #8d8d86;
 
-  /* Brand accent: emerald, with supporting amber and sky */
-  --brand: #26704a;
-  --brand-soft: #dff0e5;
-  --brand-deep: #0f3a2a;
+  /* Accent: neutral until a final accent colour is chosen. Change --brand here.
+     Amber is for caution only; green is only for success. */
+  --brand: #0f0f0f;
+  --brand-soft: #ecece6;
+  --brand-deep: #0f0f0f;
   --sun: #e0962b;
   --sun-soft: #fbecd0;
   --sun-ink: #8a5a0c;
-  --sky: #3f63c4;
-  --sky-soft: #e1e8f9;
+  --success: #2b7a4f;
+  --success-soft: #e1f0e7;
 
   --radius: 0.625rem;
 }
@@ -60,7 +61,7 @@
   --popover: #171c20;
   --foreground: #f9f9f5;
   --muted-foreground: #9ca19c;
-  --subtle-foreground: #6f7571;
+  --subtle-foreground: #8a908b;
   --card-foreground: #f9f9f5;
   --popover-foreground: #f9f9f5;
   --primary: #f9f9f5;
@@ -74,41 +75,18 @@
   --border-strong: #353d43;
   --input: #2a3238;
   --ring: #5b646b;
-  --brand: #86ad92;
-  --brand-soft: #1b2a21;
+  --brand: #f9f9f5;
+  --brand-soft: #1d2328;
+  --success: #7fd0a0;
+  --success-soft: #16291f;
 }
 
 
-/* Deep green scope: a branded dark surface alongside theme-night. */
-.theme-forest {
-  --background: #0f2e22;
-  --surface-muted: #133729;
-  --card: #16402f;
-  --popover: #16402f;
-  --foreground: #f4f8f2;
-  --muted-foreground: #a5c4b3;
-  --subtle-foreground: #7fa08e;
-  --card-foreground: #f4f8f2;
-  --popover-foreground: #f4f8f2;
-  --primary: #f4f8f2;
-  --primary-foreground: #0f2e22;
-  --secondary: #1a4a37;
-  --secondary-foreground: #f4f8f2;
-  --muted: #1a4a37;
-  --accent: #1a4a37;
-  --accent-foreground: #f4f8f2;
-  --border: #1f4d3a;
-  --border-strong: #2c6149;
-  --input: #2c6149;
-  --ring: #6fb88f;
-  --brand: #8fe0b0;
-  --brand-soft: #1c4a37;
-  --sun: #f2b24e;
-}
 
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-instrument-serif);
   --font-heading: var(--font-sans);
 
   --color-background: var(--background);
@@ -138,8 +116,8 @@
   --color-sun: var(--sun);
   --color-sun-soft: var(--sun-soft);
   --color-sun-ink: var(--sun-ink);
-  --color-sky: var(--sky);
-  --color-sky-soft: var(--sky-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
@@ -167,8 +145,8 @@
 /* ------------------------------------------------------------------ */
 
 @utility text-display {
-  font-size: clamp(2.75rem, 1.5rem + 5.2vw, 5.25rem);
-  line-height: 1.02;
+  font-size: clamp(2.5rem, 1.7rem + 2.9vw, 3.75rem);
+  line-height: 1.04;
   letter-spacing: -0.04em;
   font-weight: 600;
   text-wrap: balance;
@@ -210,7 +188,7 @@
   line-height: 1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--brand);
+  color: var(--muted-foreground);
 }
 
 @utility py-section {

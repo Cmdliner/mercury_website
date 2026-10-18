@@ -9,17 +9,17 @@ import { PHOTOS } from "@/lib/images"
 
 const VISUALS: Record<VisualId, React.ReactNode> = {
   stores: (
-    <PreviewPanel photo={PHOTOS.facade} tone="mint">
+    <PreviewPanel photo={PHOTOS.facade}>
       <StoresPreview />
     </PreviewPanel>
   ),
   accounts: (
-    <PreviewPanel photo={PHOTOS.arch} tone="sun">
+    <PreviewPanel photo={PHOTOS.arch}>
       <AccountsPreview />
     </PreviewPanel>
   ),
   reconciliation: (
-    <PreviewPanel photo={PHOTOS.spiral} tone="sky">
+    <PreviewPanel photo={PHOTOS.spiral}>
       <ReconciliationPreview />
     </PreviewPanel>
   ),

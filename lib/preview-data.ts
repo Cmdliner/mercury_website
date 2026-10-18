@@ -1,5 +1,3 @@
-import type { Tone } from "@/lib/tones"
-
 /** Sample figures for the in-page product previews. Mirrors the desktop design. */
 
 export type StorePreview = {
@@ -10,7 +8,6 @@ export type StorePreview = {
 
 export type AccountPreview = {
   name: string
-  tone: Tone
   normalBalance: "Debit" | "Credit"
   balance: number
 }
@@ -24,31 +21,26 @@ export const STORES_PREVIEW: StorePreview[] = [
 export const ACCOUNTS_PREVIEW: AccountPreview[] = [
   {
     name: "Operating",
-    tone: "mint",
     normalBalance: "Debit",
     balance: 1_240_000,
   },
   {
     name: "Settlement",
-    tone: "sky",
     normalBalance: "Credit",
     balance: 420_000,
   },
   {
     name: "Premium spending",
-    tone: "sun",
     normalBalance: "Debit",
     balance: 85_000,
   },
   {
     name: "General spending",
-    tone: "sun",
     normalBalance: "Debit",
     balance: 75_400,
   },
   {
     name: "Inventory",
-    tone: "mint",
     normalBalance: "Debit",
     balance: 2_340_000,
   },
