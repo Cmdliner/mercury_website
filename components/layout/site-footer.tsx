@@ -1,7 +1,10 @@
+import { HardHat } from "lucide-react"
+
 import { Logo } from "@/components/brand/logo"
 import { FooterColumn } from "@/components/layout/footer-column"
 import { Container } from "@/components/shared/container"
-import { NAV_LINKS, SIGN_IN_PATH, SITE } from "@/lib/constants"
+import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
+import { NAV_LINKS, SIGN_IN_PATH, SITE, WAITLIST_CTA } from "@/lib/constants"
 import { FEATURE_ROWS } from "@/lib/content"
 
 const PRODUCT_LINKS = FEATURE_ROWS.map((row) => ({
@@ -13,23 +16,35 @@ const ACCOUNT_LINKS = [{ label: "Sign in", href: SIGN_IN_PATH }]
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border">
-      <Container className="grid gap-12 py-16 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+    <footer className="overflow-hidden border-t border-border">
+      <Container className="grid gap-14 py-16 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
         <div className="max-w-xs">
           <Logo />
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Finance for businesses that run more than one store. Separate books
             for every branch, one clear view of the whole.
           </p>
+          <WaitlistDialog className="mt-7">{WAITLIST_CTA}</WaitlistDialog>
         </div>
         <FooterColumn title="Product" links={PRODUCT_LINKS} />
         <FooterColumn title="Explore" links={NAV_LINKS} />
         <FooterColumn title="Account" links={ACCOUNT_LINKS} />
       </Container>
-      <div className="border-t border-border">
-        <Container className="py-6">
-          <p className="text-xs text-subtle-foreground">
+
+      <Container aria-hidden="true">
+        <p className="pb-[0.1em] text-center text-[clamp(5rem,22vw,19rem)] leading-[0.9] font-semibold tracking-[-0.06em] text-foreground/[0.07] select-none">
+          mercury
+        </p>
+      </Container>
+
+      <div className="border-t border-border bg-background">
+        <Container className="flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-xs text-muted-foreground">
             &copy; {SITE.copyrightYear} {SITE.name}. All rights reserved.
+          </p>
+          <p className="inline-flex items-center gap-2 text-xs text-muted-foreground">
+            <HardHat className="size-3.5" aria-hidden="true" />
+            Mercury is under construction.
           </p>
         </Container>
       </div>
