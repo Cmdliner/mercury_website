@@ -23,24 +23,26 @@ export function HeroSection() {
         sizes="100vw"
         priority
         grayscale={false}
-        className="-z-10"
+        className="-z-10 motion-safe:animate-slow-zoom"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-black/40 backdrop-blur-[3px]"
+        className="absolute inset-0 -z-10 bg-black/45 backdrop-blur-[3px]"
       />
 
       <Container className="flex min-h-[40rem] flex-col items-center justify-center pt-36 pb-28 text-center sm:min-h-[46rem]">
-        <ConstructionBadge />
-        <h1 className="text-display mt-8 max-w-3xl [text-shadow:0_2px_28px_rgba(0,0,0,0.5)]">
+        <div className="motion-safe:animate-rise">
+          <ConstructionBadge />
+        </div>
+        <h1 className="text-display mt-8 max-w-3xl [animation-delay:120ms] motion-safe:animate-rise [text-shadow:0_2px_28px_rgba(0,0,0,0.5)]">
           One set of books for every store you run.
         </h1>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground [text-shadow:0_1px_18px_rgba(0,0,0,0.55)] sm:text-xl">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground [animation-delay:240ms] motion-safe:animate-rise [text-shadow:0_1px_18px_rgba(0,0,0,0.55)] sm:text-xl">
           Mercury gives each branch its own accounts and ledger, and brings them
           together so you can see balances, spending and reconciliation at a
           glance.
         </p>
-        <div className="mt-10 flex w-full flex-col justify-center gap-3 sm:w-auto sm:flex-row">
+        <div className="mt-10 flex w-full flex-col justify-center gap-3 [animation-delay:360ms] motion-safe:animate-rise sm:w-auto sm:flex-row">
           <WaitlistDialog size="lg" className="w-full sm:w-auto">
             {WAITLIST_CTA}
             <ArrowRightIcon data-icon="inline-end" />
