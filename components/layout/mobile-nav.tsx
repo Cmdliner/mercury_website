@@ -1,70 +1,29 @@
 "use client"
 
-import { useState } from "react"
-import Link from "next/link"
-import { MenuIcon } from "lucide-react"
+import { createPortal } from "react-dom"
 
-import { Button, buttonVariants } from "@/components/ui/button"
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
-import { WaitlistDialog } from "@/components/waitlist/waitlist-dialog"
-import { NAV_LINKS, SIGN_IN_PATH } from "@/lib/constants"
-import { FEATURE_ROWS } from "@/lib/content"
+import { MenuToggle } from "@/components/layout/menu-toggle"
+import { MobileMenuPanel } from "@/components/layout/mobile-menu-panel"
+import { useIsClient } from "@/hooks/use-is-client"
+import { useMobileMenu } from "@/hooks/use-mobile-menu"
 
-const LINKS = [
-  { label: "Product", href: `#${FEATURE_ROWS[0].id}` },
-  ...NAV_LINKS,
-]
-
+/**
+ * The toggle lives in the header; the panel is portalled to <body> because the
+ * header's backdrop blur would otherwise trap a fixed-position child inside it.
+ */
 export function MobileNav() {
-  const [open, setOpen] = useState(false)
-  const close = () => setOpen(false)
+  const { open, toggle, close } = useMobileMenu()
+  const isClient = useIsClient()
 
   return (
-    <Sheet open={open} onOpenChange={setOpen}>
-      <SheetTrigger
-        render={
-          <Button
-            variant="ghost"
-            size="icon"
-            aria-label="Open menu"
-            className="md:hidden"
-          />
-        }
-      >
-        <MenuIcon />
-      </SheetTrigger>
-      <SheetContent side="right">
-        <SheetHeader>
-          <SheetTitle>Menu</SheetTitle>
-        </SheetHeader>
-        <nav className="grid px-4">
-          {LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={close}
-              className="border-b border-border py-3.5 text-lg font-medium"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-        <div className="mt-auto grid gap-2 p-4">
-          <Link
-            href={SIGN_IN_PATH}
-            className={buttonVariants({ variant: "outline", size: "lg" })}
-          >
-            Sign in
-          </Link>
-          <WaitlistDialog size="lg">Request early access</WaitlistDialog>
-        </div>
-      </SheetContent>
-    </Sheet>
+    <>
+      <MenuToggle open={open} onToggle={toggle} />
+      {isClient
+        ? createPortal(
+            <MobileMenuPanel open={open} onNavigate={close} />,
+            document.body
+          )
+        : null}
+    </>
   )
 }
