@@ -4,6 +4,7 @@ import { ArrowRightIcon, HardHat } from "lucide-react"
 import { Logo } from "@/components/brand/logo"
 import { BackToTop } from "@/components/layout/back-to-top"
 import { FooterColumn } from "@/components/layout/footer-column"
+import { FooterCredit } from "@/components/layout/footer-credit"
 import { FooterGlow } from "@/components/layout/footer-glow"
 import { FooterMarquee } from "@/components/layout/footer-marquee"
 import { FooterWordmark } from "@/components/layout/footer-wordmark"
@@ -37,7 +38,7 @@ const ACCOUNT_LINKS = [{ label: "Sign in", href: SIGN_IN_PATH }]
 
 export function SiteFooter() {
   return (
-    <footer className="theme-night relative overflow-hidden rounded-t-[2.5rem] border-t border-border bg-[#0c0c0c] text-foreground sm:rounded-t-[3rem]">
+    <footer className="theme-night relative overflow-hidden rounded-t-[2.5rem] bg-[#0c0c0c] text-foreground sm:rounded-t-[3rem]">
       <FooterGlow />
       <Capsule className="-right-24 top-16 hidden h-44 w-[26rem] rotate-[16deg] bg-foreground/[0.04] motion-safe:animate-drift lg:block" />
       <Capsule className="right-40 top-56 hidden h-24 w-[16rem] -rotate-[12deg] border border-border lg:block" />
@@ -111,7 +112,10 @@ export function SiteFooter() {
               Mercury is under construction.
             </p>
           </div>
-          <BackToTop />
+          <div className="flex items-center justify-between gap-6 sm:justify-end">
+            <FooterCredit />
+            <BackToTop />
+          </div>
         </Container>
       </div>
     </footer>
