@@ -13,12 +13,15 @@ type SectionProps = React.ComponentProps<"section"> & {
   tone?: SectionTone
   /** "bottom" drops the top padding for a section that follows closely. */
   spacing?: "both" | "bottom"
+  /** "wide" lets the content run wider than the standard page width. */
+  width?: "default" | "wide"
 }
 
 /** A full-width band with the shared vertical rhythm and centred container. */
 export function Section({
   tone = "default",
   spacing = "both",
+  width = "default",
   className,
   children,
   ...props
@@ -33,7 +36,9 @@ export function Section({
       )}
       {...props}
     >
-      <Container>{children}</Container>
+      <Container className={width === "wide" ? "max-w-7xl" : undefined}>
+        {children}
+      </Container>
     </section>
   )
 }

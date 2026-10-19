@@ -17,7 +17,7 @@ export const WAITLIST_CTA = "Join the waitlist"
 export const WAITLIST_CTA_SHORT = "Join waitlist"
 
 export const NAV_LINKS = [
-  { label: "How it works", href: "/#how-it-works" },
+  { label: "Pricing", href: "/pricing" },
   { label: "FAQ", href: "/#faq" },
   { label: "Download", href: "/download" },
 ] as const
