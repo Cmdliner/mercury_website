@@ -53,8 +53,10 @@
 }
 
 /* Dark scope for sections and pages. Apply `theme-night` to any container
-   and every shadcn component inside it adapts automatically. */
-.theme-night {
+   and every shadcn component inside it adapts automatically. `night-while-menu-open`
+   does the same only while a mobile menu toggle inside it is expanded. */
+.theme-night,
+.night-while-menu-open:has([aria-expanded="true"]) {
   --background: #101417;
   --surface-muted: #151a1e;
   --card: #171c20;
@@ -137,6 +139,16 @@
   --animate-pulse-ring: pulse-ring 2.2s ease-out infinite;
   --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   --animate-slow-zoom: slow-zoom 32s ease-in-out infinite alternate;
+  --animate-marquee: marquee 40s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 
   @keyframes float {
     0%,
@@ -219,6 +231,13 @@
   }
   html {
     @apply font-sans;
+  }
+  /* Anything you can press shows the pointer, not the default arrow. */
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="radio"],
+  summary {
+    cursor: pointer;
   }
 }
 

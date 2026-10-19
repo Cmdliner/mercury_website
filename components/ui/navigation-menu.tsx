@@ -6,10 +6,14 @@ import { ChevronDownIcon } from "lucide-react"
 function NavigationMenu({
   align = "start",
   className,
+  positionerClassName,
   children,
   ...props
 }: NavigationMenuPrimitive.Root.Props &
-  Pick<NavigationMenuPrimitive.Positioner.Props, "align">) {
+  Pick<NavigationMenuPrimitive.Positioner.Props, "align"> & {
+    /** Classes for the dropdown, which renders in a portal outside this element. */
+    positionerClassName?: string
+  }) {
   return (
     <NavigationMenuPrimitive.Root
       data-slot="navigation-menu"
@@ -20,7 +24,7 @@ function NavigationMenu({
       {...props}
     >
       {children}
-      <NavigationMenuPositioner align={align} />
+      <NavigationMenuPositioner align={align} className={positionerClassName} />
     </NavigationMenuPrimitive.Root>
   )
 }

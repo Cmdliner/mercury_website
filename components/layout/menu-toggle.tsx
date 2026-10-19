@@ -17,7 +17,7 @@ export function MenuToggle({ open, onToggle }: MenuToggleProps) {
       aria-expanded={open}
       aria-controls="mobile-menu"
       onClick={onToggle}
-      className="group relative inline-flex h-10 items-center gap-2.5 rounded-full border border-border-strong bg-card/60 pr-3 pl-4 text-sm font-medium transition-colors hover:bg-secondary md:hidden"
+      className="group relative inline-flex h-10 items-center gap-2.5 rounded-full border border-border-strong bg-card/60 pr-3 pl-4 text-sm font-medium text-foreground transition-colors hover:bg-secondary md:hidden"
     >
       <span aria-hidden="true" className="relative block h-5 w-11 overflow-hidden">
         <span

@@ -16,13 +16,16 @@ import { NAV_LINKS } from "@/lib/constants"
 import { FEATURE_ROWS } from "@/lib/content"
 import { cn } from "@/lib/utils"
 
-/** Quiet grey text that darkens on hover, with no pill background. */
+/** Readable text at 15px that brightens to full strength on hover, with no pill background. */
 const ITEM_CLASS =
-  "bg-transparent px-3 text-muted-foreground hover:bg-transparent hover:text-foreground focus:bg-transparent data-open:bg-transparent data-open:hover:bg-transparent data-popup-open:bg-transparent data-popup-open:hover:bg-transparent data-popup-open:text-foreground"
+  "bg-transparent px-3.5 text-[15px] text-foreground/75 hover:bg-transparent hover:text-foreground focus:bg-transparent data-open:bg-transparent data-open:hover:bg-transparent data-popup-open:bg-transparent data-popup-open:hover:bg-transparent data-popup-open:text-foreground"
 
 export function DesktopNav() {
   return (
-    <NavigationMenu className="hidden md:flex">
+    <NavigationMenu
+      className="hidden md:flex"
+      positionerClassName="theme-night *:bg-black/95 *:backdrop-blur-xl"
+    >
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className={ITEM_CLASS}>

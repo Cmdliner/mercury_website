@@ -21,7 +21,7 @@ const PRODUCT_LINKS = FEATURE_ROWS.map((row) => ({
 /** Where the circular reveal starts: the centre of the menu toggle. */
 const REVEAL_ORIGIN = "calc(100% - 4.25rem) 2rem"
 
-/** Full-screen menu, revealed as a circle growing from the toggle button. */
+/** Full-screen dark menu, revealed as a circle growing from the toggle button. */
 export function MobileMenuPanel({ open, onNavigate }: MobileMenuPanelProps) {
   const exploreOffset = PRODUCT_LINKS.length
 
@@ -33,7 +33,7 @@ export function MobileMenuPanel({ open, onNavigate }: MobileMenuPanelProps) {
       style={{
         clipPath: `circle(${open ? "150%" : "0%"} at ${REVEAL_ORIGIN})`,
       }}
-      className="fixed inset-0 z-40 overflow-y-auto bg-background/95 backdrop-blur-2xl transition-[clip-path] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden"
+      className="theme-night fixed inset-0 z-40 overflow-y-auto bg-black/95 text-foreground backdrop-blur-2xl transition-[clip-path] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden"
     >
       <Capsule className="-right-24 top-1/3 h-40 w-[22rem] rotate-[14deg] bg-foreground/[0.05]" />
       <Capsule className="-left-32 bottom-1/4 h-36 w-[22rem] -rotate-[10deg] bg-foreground/[0.04]" />
